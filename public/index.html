@@ -26,22 +26,15 @@ Tick <em>all</em> relevant boxes. Your answers will help your doctor understand 
 
 <!-- ─────────────────────── SECTION A ─────────────────────── -->
 <fieldset>
-  <legend>Section A: Personal & Administrative Information</legend>
+  <legend>Section A: Personal Information</legend>
 
-  <label>Full Name:
-      <input type="text" name="full_name"></label>
+  <label>Age:
+      <input type="text" name="age"></label>
 
-  <label>Date of Birth:
-      <input type="date" name="dob"></label>
-
-  <label>Date of Completing Questionnaire:
-      <input type="date" name="date_completed"></label>
-
-  <label>NHS Number (if known):
-      <input type="text" name="nhs_number"></label>
-
-  <label>GP Practice & Location:
-      <input type="text" name="gp_practice"></label>
+  <label>Sex:
+      <label><input type="checkbox" name="gender[]" value="male">Male</label>
+      <label><input type="checkbox" name="gender[]" value="female">Female</label>
+      <label><input type="checkbox" name="gender[]" value="rather_not_say">Rather not say</label>
 </fieldset>
 
 <!-- ─────────────────────── SECTION B ─────────────────────── -->
