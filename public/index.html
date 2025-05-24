@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dizziness & Imbalance Questionnaire</title>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;margin:25px;line-height:1.4}
+  h1{margin-top:0}
+  fieldset{border:1px solid #555;padding:15px;margin-bottom:25px}
+  legend{font-weight:bold;font-size:1.05em}
+  label{display:block;margin:4px 0}
+  .inline label{display:inline-block;margin-right:15px}
+  textarea{width:100%;min-height:70px}
+  input[type=text],input[type=date],input[type=number]{max-width:90%}
+  .smallBox{width:80px}
+  #response{white-space:pre-wrap;background:#f3f3f3;border:1px solid #ccc;padding:15px;margin-top:25px}
+</style>
+</head>
+<body>
+
+<h1>Dizziness &amp; Imbalance Questionnaire</h1>
+<p><strong>Instructions for patients:</strong> Please complete this form carefully before your appointment.
+Tick <em>all</em> relevant boxes. Your answers will help your doctor understand your condition.</p>
+
+<form id="questionnaire">
+
+<!-- ─────────────────────── SECTION A ─────────────────────── -->
+<fieldset>
+  <legend>Section A: Personal & Administrative Information</legend>
+
+  <label>Full Name:
+      <input type="text" name="full_name"></label>
+
+  <label>Date of Birth:
+      <input type="date" name="dob"></label>
+
+  <label>Date of Completing Questionnaire:
+      <input type="date" name="date_completed"></label>
+
+  <label>NHS Number (if known):
+      <input type="text" name="nhs_number"></label>
+
+  <label>GP Practice & Location:
+      <input type="text" name="gp_practice"></label>
+</fieldset>
+
+<!-- ─────────────────────── SECTION B ─────────────────────── -->
+<fieldset>
+  <legend>Section B: Main Symptom Description</legend>
+
+  <!-- 1 -->
+  <fieldset>
+    <legend>1. When did your symptoms first begin?</legend>
+    <label>Approximate date:
+        <input type="date" name="symptoms_start_date"></label>
+
+    <div class="inline">
+      <label><input type="checkbox" name="onset[]" value="suddenly">Suddenly</label>
+      <label><input type="checkbox" name="onset[]" value="gradually">Gradually over hours/days</label>
+      <label><input type="checkbox" name="onset[]" value="not_sure">Not sure</label>
+    </div>
+  </fieldset>
+
+  <!-- 2 -->
+  <fieldset>
+    <legend>2. How would you best describe your main symptom(s)? <em>(tick all that apply)</em></legend>
+    <label><input type="checkbox" name="symptoms[]" value="vertigo">Spinning sensation (vertigo)</label>
+    <label><input type="checkbox" name="symptoms[]" value="swaying">Swaying / bobbing / bouncing / sliding</label>
+    <label><input type="checkbox" name="symptoms[]" value="moving_when_still">Feeling like I’m moving when still</label>
+    <label><input type="checkbox" name="symptoms[]" value="environment_moves">The environment moves</label>
+    <label><input type="checkbox" name="symptoms[]" value="lightheaded">Light-headedness or feeling faint</label>
+    <label><input type="checkbox" name="symptoms[]" value="blacking_out">Blacking out or loss of consciousness</label>
+    <label><input type="checkbox" name="symptoms[]" value="unsteadiness">Unsteadiness or imbalance when standing/walking</label>
+
+    <div class="inline">
+      Veering – 
+      <label><input type="checkbox" name="veering[]" value="left">Left</label>
+      <label><input type="checkbox" name="veering[]" value="right">Right</label>
+    </div>
+
+    <label><input type="checkbox" name="symptoms[]" value="floating">Floating / rocking sensation</label>
+
+    <div class="inline">
+      Feeling you may fall –
+      <label><input type="checkbox" name="fall_direction[]" value="left">Left</label>
+      <label><input type="checkbox" name="fall_direction[]" value="right">Right</label>
+      <label><input type="checkbox" name="fall_direction[]" value="forward">Forward</label>
+      <label><input type="checkbox" name="fall_direction[]" value="backward">Backward</label>
+    </div>
+
+    <label><input type="checkbox" name="symptoms[]" value="tilting">Tilting or being pulled to one side</label>
+
+    <label><input type="checkbox" name="symptoms[]" value="none_of_above">None of the above</label>
+    <label>Other:
+      <input type="text" name="symptoms_other"></label>
+  </fieldset>
+
+  <!-- 3 -->
+  <fieldset>
+    <legend>3. Which is your <em>main</em> symptom? (choose one)</legend>
+    <div class="inline">
+      <label><input type="radio" name="main_symptom" value="spinning">Spinning</label>
+      <label><input type="radio" name="main_symptom" value="lightheadedness">Light-headedness</label>
+      <label><input type="radio" name="main_symptom" value="imbalance">Imbalance</label>
+      <label><input type="radio" name="main_symptom" value="other">Other:</label>
+      <input type="text" name="main_symptom_other" class="smallBox">
+    </div>
+  </fieldset>
+</fieldset>
+
+<!-- ─────────────────────── SECTION C ─────────────────────── -->
+<fieldset>
+  <legend>Section C: Episodes – Duration & Frequency</legend>
+
+  <!-- 4 -->
+  <fieldset>
+    <legend>4. How long does a typical episode last?</legend>
+    <label><input type="checkbox" name="episode_length[]" value="seconds">Seconds (&lt;1 min)</label>
+    <label><input type="checkbox" name="episode_length[]" value="minutes">Minutes (1–20)</label>
+    <label><input type="checkbox" name="episode_length[]" value="hours">Hours (20 mins–24 hours)</label>
+    <label><input type="checkbox" name="episode_length[]" value="days">Days</label>
+    <label><input type="checkbox" name="episode_length[]" value="weeks">Weeks</label>
+    <label><input type="checkbox" name="episode_length[]" value="varies">Varies</label>
+    <label><input type="checkbox" name="episode_length[]" value="constant">Constant</label>
+  </fieldset>
+
+  <!-- 5 -->
+  <fieldset>
+    <legend>5. How often do episodes occur?</legend>
+    <label><input type="checkbox" name="frequency[]" value="several_day">Several times/day</label>
+    <label><input type="checkbox" name="frequency[]" value="daily">Daily</label>
+    <label><input type="checkbox" name="frequency[]" value="weekly">Weekly</label>
+    <label><input type="checkbox" name="frequency[]" value="monthly">Monthly</label>
+    <label><input type="checkbox" name="frequency[]" value="rarely">Rarely</label>
+  </fieldset>
+
+  <!-- 6-8 -->
+  <label>6. When was the last attack?
+      <input type="date" name="last_attack_date"></label>
+
+  <div class="inline">
+    7. Are you feeling normal between the attacks?
+    <label><input type="radio" name="normal_between" value="yes">Yes</label>
+    <label><input type="radio" name="normal_between" value="no">No</label>
+  </div><br>
+
+  <div class="inline">
+    8. When you are dizzy, must you support yourself when standing?
+    <label><input type="radio" name="support_standing" value="yes">Yes</label>
+    <label><input type="radio" name="support_standing" value="no">No</label>
+  </div>
+</fieldset>
+
+<!-- ─────────────────────── SECTION D ─────────────────────── -->
+<fieldset>
+  <legend>Section D: Triggers & Aggravating Factors</legend>
+
+  <!-- 9 -->
+  <fieldset>
+    <legend>9. Which of the following triggers or worsens your symptoms? <em>(tick all that apply)</em></legend>
+    <label><input type="checkbox" name="triggers[]" value="rolling_in_bed">Rolling in bed</label>
+    <label><input type="checkbox" name="triggers[]" value="looking_up_down">Looking up/down</label>
+    <label><input type="checkbox" name="triggers[]" value="bending_down">Bending down</label>
+    <label><input type="checkbox" name="triggers[]" value="quick_head_movement">Quick head movements</label>
+    <label><input type="checkbox" name="triggers[]" value="standing_up_fast">Standing up fast</label>
+    <label><input type="checkbox" name="triggers[]" value="bright_lights">Bright lights or flickering</label>
+    <label><input type="checkbox" name="triggers[]" value="complex_visuals">Fast-moving/complex visuals (e.g. supermarket aisles, scrolling screens)</label>
+    <label><input type="checkbox" name="triggers[]" value="loud_sounds">Loud sounds</label>
+    <label><input type="checkbox" name="triggers[]" value="straining">Straining, coughing, or sneezing</label>
+    <label><input type="checkbox" name="triggers[]" value="transport">Riding in transport (car, train, airplane, boat)</label>
+    <label><input type="checkbox" name="triggers[]" value="stress">Stress / Anxiety</label>
+    <label><input type="checkbox" name="triggers[]" value="menstruation">Menstruation</label>
+    <label><input type="checkbox" name="triggers[]" value="exercise">Exercise</label>
+    <label><input type="checkbox" name="triggers[]" value="fatigue">Fatigue</label>
+    <label><input type="checkbox" name="triggers[]" value="hunger">Hunger</label>
+    <label><input type="checkbox" name="triggers[]" value="dehydration">Dehydration</label>
+    <label><input type="checkbox" name="triggers[]" value="certain_foods">Certain foods (e.g. salt, caffeine, alcohol, MNG, dairy)</label>
+    <label><input type="checkbox" name="triggers[]" value="nothing_specific">Nothing specific</label>
+    <label>Other:
+      <input type="text" name="triggers_other"></label>
+  </fieldset>
+
+  <!-- 10 -->
+  <fieldset>
+    <legend>10. Do you avoid any activities due to fear of falling or triggering symptoms?</legend>
+    <label><input type="radio" name="avoid_activities" value="yes">Yes – Please specify:
+      <input type="text" name="avoid_specify" class="smallBox"></label>
+    <label><input type="radio" name="avoid_activities" value="no">No</label>
+  </fieldset>
+</fieldset>
+
+<!-- ─────────────────────── SECTION E ─────────────────────── -->
+<fieldset>
+  <legend>Section E: Associated Symptoms (tick all that apply)</legend>
+
+  <!-- 11 Ear-related -->
+  <fieldset>
+    <legend>11. Ear-related symptoms</legend>
+    <div class="inline">Hearing loss –
+      <label><input type="checkbox" name="hearing_loss[]" value="left">Left</label>
+      <label><input type="checkbox" name="hearing_loss[]" value="right">Right</label>
+      <label><input type="checkbox" name="hearing_loss[]" value="both">Both</label>
+    </div>
+    <div class="inline">Ringing/Buzzing –
+      <label><input type="checkbox" name="tinnitus[]" value="left">Left</label>
+      <label><input type="checkbox" name="tinnitus[]" value="right">Right</label>
+      <label><input type="checkbox" name="tinnitus[]" value="both">Both</label>
+    </div>
+    <div class="inline">Whooshing heartbeat –
+      <label><input type="checkbox" name="whooshing[]" value="left">Left</label>
+      <label><input type="checkbox" name="whooshing[]" value="right">Right</label>
+      <label><input type="checkbox" name="whooshing[]" value="both">Both</label>
+    </div>
+    <div class="inline">Ear pressure/fullness –
+      <label><input type="checkbox" name="pressure[]" value="left">Left</label>
+      <label><input type="checkbox" name="pressure[]" value="right">Right</label>
+      <label><input type="checkbox" name="pressure[]" value="both">Both</label>
+    </div>
+    <div class="inline">Ear pain –
+      <label><input type="checkbox" name="ear_pain[]" value="left">Left</label>
+      <label><input type="checkbox" name="ear_pain[]" value="right">Right</label>
+      <label><input type="checkbox" name="ear_pain[]" value="both">Both</label>
+    </div>
+    <div class="inline">Ear discharge –
+      <label><input type="checkbox" name="ear_discharge[]" value="left">Left</label>
+      <label><input type="checkbox" name="ear_discharge[]" value="right">Right</label>
+      <label><input type="checkbox" name="ear_discharge[]" value="both">Both</label>
+    </div>
+  </fieldset>
+
+  <!-- 12 Neurological -->
+  <fieldset>
+    <legend>12. Neurological symptoms</legend>
+    <label><input type="checkbox" name="neuro[]" value="double_vision">Double vision</label>
+    <label><input type="checkbox" name="neuro[]" value="oscillopsia">Oscillopsia (objects “jumping” visually)</label>
+    <label><input type="checkbox" name="neuro[]" value="slurred_speech">Slurred speech</label>
+    <label><input type="checkbox" name="neuro[]" value="difficulty_swallowing">Difficulty swallowing</label>
+    <label><input type="checkbox" name="neuro[]" value="facial_weakness">Facial weakness/numbness</label>
+    <label><input type="checkbox" name="neuro[]" value="limb_weakness">Arm/leg weakness or numbness</label>
+    <label><input type="checkbox" name="neuro[]" value="clumsiness">Clumsiness</label>
+    <label><input type="checkbox" name="neuro[]" value="confusion">Confusion</label>
+  </fieldset>
+
+  <!-- 13 General -->
+  <fieldset>
+    <legend>13. General symptoms</legend>
+    <label><input type="checkbox" name="general[]" value="nausea">Nausea</label>
+    <label><input type="checkbox" name="general[]" value="vomiting">Vomiting</label>
+    <label><input type="checkbox" name="general[]" value="sweating">Sweating</label>
+    <label><input type="checkbox" name="general[]" value="blackouts">Blackouts</label>
+    <label><input type="checkbox" name="general[]" value="palpitations">Heart palpitations</label>
+    <label><input type="checkbox" name="general[]" value="sob">Shortness of breath</label>
+    <label><input type="checkbox" name="general[]" value="headache">Headache</label>
+    <label><input type="checkbox" name="general[]" value="migraine">Migraine</label>
+    <label><input type="checkbox" name="general[]" value="photophobia">Photophobia</label>
+    <label><input type="checkbox" name="general[]" value="phonophobia">Phonophobia</label>
+    <label><input type="checkbox" name="general[]" value="chest_pain">Chest pain</label>
+  </fieldset>
+
+  <!-- extra misc list -->
+  <fieldset>
+    <legend>Other associated conditions</legend>
+    <label><input type="checkbox" name="assoc[]" value="vision">Vision problems</label>
+    <label><input type="checkbox" name="assoc[]" value="spine">Spine problems</label>
+    <label><input type="checkbox" name="assoc[]" value="arthritis">Arthritis/Joint problems</label>
+    <label><input type="checkbox" name="assoc[]" value="anxiety">Anxiety/Panic disorder</label>
+    <label><input type="checkbox" name="assoc[]" value="depression">Depression</label>
+    <label><input type="checkbox" name="assoc[]" value="thyroid">Thyroid problems</label>
+    <label>Other:
+      <input type="text" name="assoc_other"></label>
+  </fieldset>
+
+  <!-- 15 Tests -->
+  <fieldset>
+    <legend>15. Have you had any of these tests previously?</legend>
+    <label><input type="checkbox" name="tests[]" value="hearing_test">Hearing test</label>
+    <label><input type="checkbox" name="tests[]" value="balance_test">Balance testing (ENG/VNG/Posturography)</label>
+    <label><input type="checkbox" name="tests[]" value="mri_ct">MRI or CT scan</label>
+    <label><input type="checkbox" name="tests[]" value="blood_tests">Blood tests</label>
+    <label>Other:
+      <input type="text" name="tests_other"></label>
+  </fieldset>
+</fieldset>
+
+<!-- ─────────────────────── SECTION F ─────────────────────── -->
+<fieldset>
+  <legend>Section F: Medical History (tick all that apply)</legend>
+  <label><input type="checkbox" name="history[]" value="cold_flu">Cold or flu preceding the attacks</label>
+  <label><input type="checkbox" name="history[]" value="ear_infection">Ear infection preceding the attacks</label>
+  <label><input type="checkbox" name="history[]" value="head_injury">Recent head injury or concussion, or whiplash</label>
+  <label><input type="checkbox" name="history[]" value="bppv">BPPV (Benign Paroxysmal Positional Vertigo)</label>
+  <label><input type="checkbox" name="history[]" value="menieres">Ménière’s Disease</label>
+  <label><input type="checkbox" name="history[]" value="vestibular_neuritis">Vestibular neuritis/labyrinthitis</label>
+  <label><input type="checkbox" name="history[]" value="migraine">Migraine</label>
+  <label><input type="checkbox" name="history[]" value="epilepsy">Epilepsy</label>
+  <label><input type="checkbox" name="history[]" value="motion_sickness">Travel sickness / Motion sickness</label>
+  <label><input type="checkbox" name="history[]" value="stroke_tia">Stroke / TIA</label>
+  <label><input type="checkbox" name="history[]" value="dementia">Dementia</label>
+  <label><input type="checkbox" name="history[]" value="diabetes">Diabetes</label>
+  <label><input type="checkbox" name="history[]" value="hypertension">Hypertension</label>
+  <label><input type="checkbox" name="history[]" value="heart_disease">Heart disease</label>
+  <label><input type="checkbox" name="history[]" value="neck_problems">Neck problems</label>
+</fieldset>
+
+<!-- ─────────────────────── SECTION G ─────────────────────── -->
+<fieldset>
+  <legend>Section G: Medications & Allergies</legend>
+
+  <!-- 16 -->
+  <label>16. List all current medications (prescribed, OTC, herbal):</label>
+  <textarea name="current_meds"></textarea>
+
+  <!-- 17 -->
+  <fieldset>
+    <legend>17. Have you been prescribed any of the following medications for vertigo?</legend>
+    <label><input type="checkbox" name="vertigo_meds[]" value="stemetil">Stemetil</label>
+    <label><input type="checkbox" name="vertigo_meds[]" value="prochlorperazine">Prochlorperazine</label>
+    <label><input type="checkbox" name="vertigo_meds[]" value="buccastem">Buccastem</label>
+    <label><input type="checkbox" name="vertigo_meds[]" value="betahistine">Betahistine</label>
+    <label><input type="checkbox" name="vertigo_meds[]" value="cinnarizine">Cinnarizine</label>
+    <label>Other:
+      <input type="text" name="vertigo_meds_other"></label>
+  </fieldset>
+
+  <!-- 18 -->
+  <label>18. Do you consume alcohol? If yes, how much?<br>
+    <input type="text" name="alcohol_amount"></label>
+
+  <!-- 19 -->
+  <fieldset>
+    <legend>19. Do you have medication allergies?</legend>
+    <label><input type="radio" name="med_allergy" value="yes">Yes –
+      <input type="text" name="allergy_details" class="smallBox"></label>
+    <label><input type="radio" name="med_allergy" value="no">No</label>
+  </fieldset>
+</fieldset>
+
+<!-- ─────────────────────── SECTION H ─────────────────────── -->
+<fieldset>
+  <legend>Section H: Impact & Goals</legend>
+
+  <!-- 20 -->
+  <fieldset>
+    <legend>20. How much do your symptoms interfere with your life?</legend>
+    <label><input type="radio" name="impact_level" value="none">No effect</label>
+    <label><input type="radio" name="impact_level" value="mild">Mild – I manage, but it’s inconvenient</label>
+    <label><input type="radio" name="impact_level" value="moderate">Moderate – Some activity restrictions</label>
+    <label><input type="radio" name="impact_level" value="severe">Severe – I am constrained</label>
+  </fieldset>
+
+  <!-- 21 -->
+  <fieldset>
+    <legend>21. Have you fallen due to these symptoms?</legend>
+    <label><input type="radio" name="fallen" value="yes">Yes – How many times in the past 6 months?
+      <input type="number" name="fall_times" min="0" class="smallBox"></label>
+    <label><input type="radio" name="fallen" value="no">No</label>
+  </fieldset>
+
+  <!-- 22 -->
+  <fieldset>
+    <legend>22. What are your main goals for this appointment? (tick all that apply)</legend>
+    <label><input type="checkbox" name="goals[]" value="understand_cause">Understand the cause of symptoms</label>
+    <label><input type="checkbox" name="goals[]" value="treatment">Treatment/Medication</label>
+    <label><input type="checkbox" name="goals[]" value="imaging">Imaging/Scanning</label>
+    <label><input type="checkbox" name="goals[]" value="reassurance">Reassurance</label>
+    <label><input type="checkbox" name="goals[]" value="referral">Referral to another specialist</label>
+    <label>Other:
+      <input type="text" name="goals_other"></label>
+  </fieldset>
+
+  <!-- 23 -->
+  <label>23. Is there anything else the clinician should know?</label>
+  <textarea name="additional_info"></textarea>
+</fieldset>
+
+</form>
+
+<button id="sendButton" style="margin-top:10px">Submit &amp; Get ChatGPT Opinion</button>
+
+<h2>ChatGPT’s Differential &amp; Management Suggestions</h2>
+<div id="response">— Nothing yet —</div>
+
+<script>
+/* helper: turn FormData into plain JS object, preserving multi-value fields */
+function formToJson(fd){
+  const out = {};
+  for (const [k,v] of fd.entries()){
+    if(out[k]){
+      Array.isArray(out[k]) ? out[k].push(v) : out[k] = [out[k], v];
+    }else{
+      out[k] = v;
+    }
+  }
+  return out;
+}
+
+document.getElementById('sendButton').addEventListener('click', async () => {
+  const form   = document.getElementById('questionnaire');
+  const fd     = new FormData(form);
+  const answers= formToJson(fd);
+
+  const btn    = document.getElementById('sendButton');
+  const box    = document.getElementById('response');
+  btn.disabled = true; btn.textContent = 'Thinking…';
+
+  try{
+    const res  = await fetch('/api/chat', {
+      method : 'POST',
+      headers: {'Content-Type':'application/json'},
+      body   : JSON.stringify({ answers })
+    });
+
+    if(!res.ok) throw new Error('Server returned '+res.status);
+    const data = await res.json();
+    box.textContent = data.reply || 'No response text?';
+
+  }catch(err){
+    console.error(err);
+    box.textContent = '⚠️  Error: '+err.message;
+  }finally{
+    btn.disabled = false; btn.textContent = 'Submit & Get ChatGPT Opinion';
+  }
+});
+</script>
+</body>
+</html>
