@@ -22,7 +22,7 @@ app.post('/api/chat', async (req, res) => {
     const completion = await openai.chat.completions.create({   // ⬅ NEW call
       model: 'gpt-4o-mini',       // or gpt-4o/gpt-4o-mini, etc.
       messages: [
-        { role: 'system', content: 'You are an experienced ENT clinician.' },
+        { role: 'system', content: 'You are an experienced ENT clinician. Provide me with the key differnetials and give a stepwise approach to investigations and management' },
         { role: 'user',   content: prompt }
       ],
       temperature: 0.4
